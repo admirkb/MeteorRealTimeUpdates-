@@ -1,0 +1,63 @@
+<br/>
+<form>
+  <label  class="copy1">New Problem: </label>
+  <input  type="text" ng-model="bugsList.newBug.problem" />
+  <!--<label>Response: </label>
+  <input type="text" ng-model="bugsList.newBug.response" />-->
+  <button ng-click="bugsList.addBug()" class="btn btn-primary btn-sm">Add problem!</button>
+</form>
+
+<br />
+
+<table class="copy1">
+    <tr>
+        <td>
+            <div>
+                <table style="width:100px;white-space:nowrap" >
+                    <tr>
+                        <!--<th style="text-align:left;">Editing</th>-->
+                        <th style="text-align:left;">Problem</th>
+                        <th style="text-align:left;">Response</th>
+                        <th style="text-align:left;">Date Created</th>
+                        <th style="text-align:left;">Date Answered</th>
+                        <th></th>
+                    </tr>
+                    <tr class="copy2" data-ng-repeat="(key,o) in bugsList.bugs" data-ng-style="{backgroundColor: o.editColor}">
+                        <!--<td style="width:120px;">
+                            <input style="width:120px;" type="text" ng-model="o.isEditable"  />
+                        </td>-->
+                        <td style="width:150px;">
+                            <input style="width:150px;" type="text" ng-model="o.problem" ng-show="o.isEditable" />
+                            <div class="adtooltip" xxxx="{{o.problem}}">
+                                <div style="width:150px;white-space:nowrap; overflow:hidden;" ng-show="!o.isEditable" ng-bind="o.problem"></div>
+                            </div>
+                        </td>
+                        <td style="width:150px;">
+                            <input style="width:150px;" type="text" ng-model="o.response" ng-show="o.isEditable" />
+                            <div class="adtooltip" xxxx="{{o.response}}">
+                                <div style="width:150px;white-space:nowrap; overflow:hidden;" ng-show="!o.isEditable" ng-bind="o.response"></div>
+                            </div>
+                        </td>
+                        <td style="width:100px;">
+                            <div style="width:110px;white-space:nowrap" ng-bind="o.dateCreated | date:'dd/MM/yyyy @ HH:mm'"></div>
+                        </td>
+                        <td style="width:100px;">
+                            <div style="width:110px;white-space:nowrap" ng-bind="o.dateResolved | date:'dd/MM/yyyy @ HH:mm'"></div>
+                        </td>
+
+                        <td>
+                            <button class="btn btn-primary btn-xs" ng-disabled="o.isDisabled" ng-click="bugsList.EditBug(o, key)" ng-show="!o.isEditable">Edit</button>
+                            <button class="btn btn-primary btn-xs" ng-disabled="o.isDisabled"  ng-click="bugsList.UpdateBug(o, key)" ng-show="o.isEditable">Update</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-xs" ng-disabled="o.isDisabled" ng-click="bugsList.DeleteBug(o, key)" ng-show="!o.isEditable">Delete</button>
+                            <button class="btn btn-primary btn-xs" ng-disabled="o.isDisabled" ng-click="bugsList.CancelBug(o, key)" ng-show="o.isEditable">Cancel</button>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </td>
+    </tr>
+</table>

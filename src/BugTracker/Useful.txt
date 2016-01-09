@@ -1,0 +1,107 @@
+﻿
+
+////angular.module('socially').directive('bugsList', function () {
+
+
+
+////    return {
+////        restrict: 'E',
+
+
+////        templateUrl: 'client/bugs/bugs-list/bugs-list.html',
+////        controllerAs: 'bugsList',
+////        controller: function ($scope, $reactive, $window) {
+////            $reactive(this).attach($scope);
+
+////            //$window.addEventListener('afterunload', alert("Hi"));
+////            //$(window).bind('beforeunload', function (e) {
+////            //    alert("Update tables here.");
+////            //    e.preventDefault();
+
+////            //});
+
+////            //$(window).bind('beforeunload', function () {
+////            //    alert("Update tables here.");
+////            //    //e.preventDefault();
+
+////            //});
+
+////            //$(window).bind('beforeunload', function (e) {
+////            //    e.preventDefault();
+////            //    alert("Update tables here.");
+////            //    //return 'Are you sure you want to leave?';
+////            //});
+
+////            //alert($(window));
+
+////            //$window.addEventListener('beforeunload', confirmLeavePage);
+
+////            //this.beforeUnload = () => {
+////            //    alert("Update tables here.");
+////            //};
+
+////            window.onbeforeunload = function (event) {
+////                var message = '';
+////                if (typeof event == 'undefined') {
+////                    event = window.event;
+////                }
+////                if (event) {
+////                    event.returnValue = message;
+////                }
+////                return message;
+////            };
+
+
+   
+////            this.helpers({
+////                bugs: () => {
+////                    return Bugs.find({});
+////                }
+////            });
+
+////            this.addBug = () => {
+////                this.newBug.dateCreated = new Date();
+////                Bugs.insert(this.newBug);
+////                this.newBug = {};
+////            };
+
+////            this.DeleteBug = (bug, key) => {
+////                Bugs.remove({ _id: bug._id });
+////            }
+
+////            this.EditBug = (bug, key) => {
+
+////                bug.isEditable = true;
+////                bug.origProblem = bug.problem;
+////                bug.origResponse = bug.response;
+
+////                Bugs.update({ _id: bug._id }, { $set: { isDisabled: true, isEditable: bug.isEditable, editColor: "red" } });
+
+////                bug.isDisabled = false;
+////                bug.editColor = "transparent";
+
+////            }
+
+////            this.CancelBug = (bug, key) => {
+
+////                bug.isEditable = false;
+////                bug.problem = bug.origProblem;
+////                bug.response = bug.origResponse;
+
+////                Bugs.update({ _id: bug._id }, { $set: { isDisabled: false, isEditable: bug.isEditable, editColor: "transparent" } });
+
+////            }
+
+////            this.UpdateBug = (bug, key) => {
+
+////                Bugs.update({ _id: bug._id }, { $set: { isDisabled: false, isEditable: false, problem: bug.problem, response: bug.response, dateResolved: new Date(), editColor: "transparent" } });
+////                bug.isDisabled = false;
+////                bug.editColor = "transparent";
+
+
+////            }
+
+
+////        }
+////    }
+////});
